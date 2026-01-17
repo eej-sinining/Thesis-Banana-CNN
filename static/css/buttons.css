@@ -1,0 +1,28 @@
+.btn {
+    padding: 12px 26px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #256628;
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--light-green);
+}

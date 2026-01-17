@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BananaLeaf AI - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-green-600 rounded-lg p-2">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-semibold text-gray-900">
+                        Banana<span class="text-green-600">Leaf</span> AI
+                    </span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="flex items-center space-x-2 text-green-600 font-medium">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="flex items-center space-x-2 text-gray-700 hover:text-green-600 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="font-medium">About Model</span>
+                    </a>
+                    <a href="#instructions" class="flex items-center space-x-2 text-gray-700 hover:text-green-600 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        <span class="font-medium">Instructions</span>
+                    </a>
+                    <a href="#contact" class="flex items-center space-x-2 text-gray-700 hover:text-green-600 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="font-medium">Contact</span>
+                    </a>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-green-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="/" class="flex items-center space-x-2 text-green-600 font-medium py-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="flex items-center space-x-2 text-gray-700 hover:text-green-600 transition-colors py-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="font-medium">About Model</span>
+                    </a>
+                    <a href="#instructions" class="flex items-center space-x-2 text-gray-700 hover:text-green-600 transition-colors py-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        <span class="font-medium">Instructions</span>
+                    </a>
+                    <a href="#contact" class="flex items-center space-x-2 text-gray-700 hover:text-green-600 transition-colors py-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="font-medium">Contact</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-50 py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full mb-6">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+                <span class="font-medium">AI-Powered Disease Detection</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+                Detect Banana Leaf<br>
+                <span class="text-green-600">Disease Instantly</span>
+            </h1>
+            
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                Upload a photo of your banana leaf and get instant AI-powered analysis.<br>
+                Identity disease early and take action to protect your crops.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/upload" class="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                    </svg>
+                    <span>Start Detection</span>
+                </a>
+                <a href="#instructions" class="inline-flex items-center space-x-2 bg-white text-gray-700 px-6 py-3 rounded-lg font-medium border-2 border-gray-300 hover:border-green-600 hover:text-green-600 transition-colors">
+                    <span>Learn How It Works</span>
+                </a>
+            </div>
+            
+            <div class="mt-12 text-gray-500 text-sm flex items-center justify-center space-x-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+                <span>Scroll to learn more</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                    <span class="font-medium">AI Technology</span>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Our Detection Model</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Learn how our AI-powered system helps farmers identify banana leaf diseases quickly and accurately.
+                </p>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Enhanced ResNet50</h3>
+                    <p class="text-gray-600 text-sm">
+                        Powered by a fine-tuned ResNet50 deep learning architecture trained specifically for banana leaf disease detection.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Real-time Analysis</h3>
+                    <p class="text-gray-600 text-sm">
+                        Get instant results in under a second. Perfect for quick field assessments without internet delays.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">High Accuracy</h3>
+                    <p class="text-gray-600 text-sm">
+                        Achieves over 94% accuracy in distinguishing between healthy leaves, Cordana, and Sigatoka diseases.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Reliable Detection</h3>
+                    <p class="text-gray-600 text-sm">
+                        Built with extensive training data from real field samples to ensure reliable performance in various conditions.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Confidence Scoring</h3>
+                    <p class="text-gray-600 text-sm">
+                        Each prediction includes a confidence score to help you understand the certainty of the diagnosis.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Multi-class Detection</h3>
+                    <p class="text-gray-600 text-sm">
+                        Capable of detecting and distinguishing between multiple disease types and healthy conditions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Green Banner -->
+            <div class="bg-green-600 rounded-2xl p-8 md:p-12 text-center text-white">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">Designated for Farmers, Built for the field</h3>
+                <p class="text-green-50 max-w-3xl mx-auto">
+                    Our system is specifically designed to be user-friendly and accessible, even for farmers with limited technical experience. Simply upload a photo and receive instant, actionable results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section id="instructions" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Photo Guidelines -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class="font-medium">Photo Guidelines</span>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How to Take the Perfect Photo</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Follow these guidelines to ensure accurate disease detection results.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Do's -->
+                <div class="bg-white rounded-xl p-8">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="bg-green-100 rounded-full p-2">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Do's</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            <span class="text-gray-700">Take photo under good, natural lightning</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                            <span class="text-gray-700">Capture a single leaf only</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            <span class="text-gray-700">Keep the camera steady and focused</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-gray-700">Ensure the entire leaf is visible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Don'ts -->
+                <div class="bg-white rounded-xl p-8">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="bg-red-100 rounded-full p-2">
+                            <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Don'ts</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-700">Don't cover leaf edges with your fingers</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-700">Don't blur the camera</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-700">Don't take photos in low light</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-700">Don't capture multiple leaves at once</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tip Banner -->
+            <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6 flex items-center justify-center space-x-3">
+                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <p class="text-yellow-800 font-medium">
+                    <span class="font-bold">Tip:</span> Natural daylight gives the best results!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disease Reference Section -->
+    <section class="py-20 bg-white" id="disease-info">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-full mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <span class="font-medium">Disease Reference</span>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Understanding Banana Leaf Diseases</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Learn about the diseases our AI can detect and recommended actions for each condition.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Healthy Leaf -->
+                <div class="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900">Healthy Leaf</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        A healthy banana leaf shows no signs of disease, with uniform green coloration and no spots or lesions.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">Early Signs</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-600 mt-0.5">→</span>
+                                <span>Uniform green color throughout</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-600 mt-0.5">→</span>
+                                <span>No spots or lesions</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-600 mt-0.5">→</span>
+                                <span>Smooth leaf surface</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-600 mt-0.5">→</span>
+                                <span>Strong leaf structure</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Suggested Actions</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Continue regular care and maintenance</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Monitor periodically for any changes</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Maintain proper irrigation and nutrition</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cordana Leaf Spot -->
+                <div class="bg-gray-50 rounded-xl p-6 border-2 border-orange-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900">Cordana Leaf Spot</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Cordana leaf spot is a fungal disease causing characteristic oval-shaped spots, typically appearing on older leaves first.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">Early Signs</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-orange-600 mt-0.5">→</span>
+                                <span>Oval-shaped spots with gray centers</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-orange-600 mt-0.5">→</span>
+                                <span>Dark brown or purple borders around spots</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-orange-600 mt-0.5">→</span>
+                                <span>Usually appears on older leaves</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-orange-600 mt-0.5">→</span>
+                                <span>Spots may merge to form larger patches</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Suggested Actions</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Remove and destroy affected leaves</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Improve air circulation around plants</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Apply recommended fungicides if severe</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-orange-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Avoid overhead irrigation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sigatoka Disease -->
+                <div class="bg-gray-50 rounded-xl p-6 border-2 border-red-200">
+                    <div class="flex items-start space-x-2 mb-4">
+                        <svg class="w-6 h-6 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900">Sigatoka Disease</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Sigatoka is one of the most destructive diseases of bananas worldwide, significantly impacting yield and fruit quality.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">Early Signs</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-red-600 mt-0.5">→</span>
+                                <span>Yellow streaks parallel to leaf veins</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-red-600 mt-0.5">→</span>
+                                <span>Streaks turn brown with gray centers</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-red-600 mt-0.5">→</span>
+                                <span>Lesions spread and coalesce</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-red-600 mt-0.5">→</span>
+                                <span>Premature leaf death in severe cases</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Suggested Actions</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Immediate removal of infected leaves</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Apply protective and curative fungicides</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Consider resistant varieties for replanting</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Consult local agricultural extension services</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Improve drainage and reduce humidity</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand Column -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="bg-green-600 rounded-lg p-2">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-semibold text-gray-900">
+                            Banana<span class="text-green-600">Leaf</span> AI
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        AI-powered banana leaf disease detection system designed to help farmers identify and manage plant diseases quickly and accurately.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-gray-600 hover:text-green-600 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-600 hover:text-green-600 transition-colors">About Model</a></li>
+                        <li><a href="#instructions" class="text-gray-600 hover:text-green-600 transition-colors">Instruction</a></li>
+                        <li><a href="#disease-info" class="text-gray-600 hover:text-green-600 transition-colors">Disease Information</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">Contact</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center space-x-2 text-gray-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>support@bananaleaf.ai</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>www.bananaleaf.ai</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> BananaLeaf AI. All rights reserved.</p>
+                <p class="flex items-center space-x-1 mt-4 md:mt-0">
+                    <span>Made with</span>
+                    <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                    </svg>
+                    <span>for farmers everywhere</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>

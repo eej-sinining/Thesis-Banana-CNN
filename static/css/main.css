@@ -1,0 +1,25 @@
+@import url("navbar.css");
+@import url("hero.css");
+@import url("buttons.css");
+@import url("upload.css");
+
+:root {
+    --primary-green: #2e7d32;
+    --light-green: #eaf5ea;
+    --border-green: #9ccc9c;   /* 🔴 YOU WERE MISSING THIS */
+    --text-dark: #111;
+    --text-muted: #555;
+    --bg-main: #f6fbf6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+}
