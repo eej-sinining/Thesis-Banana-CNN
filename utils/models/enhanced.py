@@ -12,7 +12,7 @@ MODEL_PATH = os.path.join(
     ARTIFACTS_DIR, "enhanced_resnet50_deployment_v9.tflite"
 )
 CLASS_MAPPING_PATH = os.path.join(
-    ARTIFACTS_DIR, "class_indices_v9.json"
+    ARTIFACTS_DIR, "class_indices_v7.json"
 )
 
 # Load model
