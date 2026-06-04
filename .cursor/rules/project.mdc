@@ -1,0 +1,36 @@
+---
+description: Project-specific rules auto-generated from codebase scan
+alwaysApply: true
+---
+
+# Project: Banana Leaf Disease Detection
+
+## Stack
+Python 3.11, Flask server-side rendering with Jinja templates, TensorFlow Lite inference, NumPy/Pillow image preprocessing, TailwindCSS + vanilla JavaScript frontend.
+
+## Architecture
+Monolithic Flask app with route-driven rendering. Inference pipeline is split into `utils/models` (baseline and enhanced model wrappers), `utils/models/common.py` (shared preprocessing), and `utils/predictor.py` (result enrichment and model comparison output).
+
+## Naming & Conventions
+- Snake_case for Python modules, functions, and dictionary keys.
+- Templates are route-oriented (`index.html`, `upload-form.html`, `result.html`) and extend `layout.html`.
+- Model API contract currently returns `baseline` and `enhanced` payloads with aligned fields for template rendering.
+- Static scripts are one-per-page (`static/js/<page>.js`) with direct DOM event wiring.
+
+## Key Constraints
+- Keep `result.html` data contract stable for existing fields (`disease_name`, `confidence`, `inference_time_ms`, etc.).
+- Uploaded files are limited to jpg/jpeg/png and saved into `static/uploads`.
+- Baseline and enhanced models are both loaded at module import time for runtime prediction.
+- Class mapping uses `utils/artifacts/class_indices_v5.json` for both deployed models.
+
+## Folder Structure
+- Root Flask entrypoints/config: `app.py`, `config.py`
+- Templates: `templates/`
+- Frontend scripts: `static/js/`
+- Inference logic: `utils/predictor.py`, `utils/models/`
+- Model artifacts and class indices: `utils/artifacts/`
+
+## What NOT to Do
+- Do not break the baseline/enhanced output shape consumed by templates.
+- Do not add unnecessary framework abstractions (keep Flask + Jinja flow simple).
+- Do not mix deployment inference logic with training notebooks/notes; keep deployment-focused code in `utils/models` and `utils/predictor.py`.
