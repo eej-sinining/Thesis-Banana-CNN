@@ -46,6 +46,14 @@ def predict():
         if not result['success']:
             return f"Prediction error: {result['error']}", 500
 
+        if result.get("not_a_leaf"):
+            return render_template(
+                'result.html',
+                image_path=safe_filename,
+                not_a_leaf=True,
+                rejection_reason=result.get("rejection_reason")
+            )
+
         # model returns both baseline and enhanced results
         baseline_result = result['baseline']
         enhanced_result = result['enhanced']
@@ -54,6 +62,7 @@ def predict():
         return render_template(
             'result.html',
             image_path=safe_filename,
+            not_a_leaf=False,
             baseline=baseline_result,
             enhanced=enhanced_result,
             reports=reports_result
