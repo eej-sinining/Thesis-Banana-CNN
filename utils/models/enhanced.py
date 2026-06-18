@@ -9,10 +9,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 ARTIFACTS_DIR = os.path.join(BASE_DIR, "artifacts")
 
 MODEL_PATH = os.path.join(
-    ARTIFACTS_DIR, "enhanced_resnet50_deployment_v9.tflite"
+    ARTIFACTS_DIR, "enhanced_resnet50_deployment_v10.tflite"
 )
 CLASS_MAPPING_PATH = os.path.join(
-    ARTIFACTS_DIR, "class_indices_v9.json"
+    ARTIFACTS_DIR, "class_indices_v10.json"
 )
 
 # Load model

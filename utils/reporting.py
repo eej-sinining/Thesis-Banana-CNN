@@ -239,7 +239,7 @@ def _draw_bbox_on_image(
     label: str,
     confidence: float,
     color: Tuple[int, int, int] = (220, 50, 50),
-    lw: int = 3,
+    lw: int = 2,
 ) -> Image.Image:
     out  = img_pil.copy().convert("RGB")
     draw = ImageDraw.Draw(out)
@@ -248,10 +248,10 @@ def _draw_bbox_on_image(
     for d in range(lw):
         draw.rectangle([x0 - d, y0 - d, x1 + d, y1 + d], outline=color)
 
-    text = f"{label}  {confidence:.1f}%"
+    text = f"{label} {confidence:.1f}%"
     try:
         font = ImageFont.truetype(
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 14
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 8
         )
     except Exception:
         font = ImageFont.load_default()
@@ -259,7 +259,7 @@ def _draw_bbox_on_image(
     tb  = draw.textbbox((0, 0), text, font=font)
     tw  = tb[2] - tb[0]
     th  = tb[3] - tb[1]
-    pad = 4
+    pad = 1
     ly  = max(0, y0 - th - 2 * pad - lw)
     draw.rectangle([x0, ly, min(out.width - 1, x0 + tw + 2 * pad), ly + th + 2 * pad], fill=color)
     draw.text((x0 + pad, ly + pad), text, fill=(255, 255, 255), font=font)
